@@ -10,8 +10,17 @@ wget -O archives/gromacs-$VERSION.tar.gz ftp://ftp.gromacs.org/pub/gromacs/groma
 tar zxvf archives/gromacs-$VERSION.tar.gz
 
 # TODO
-# comilers based on docker image
+# compilers based on docker image
 # CC
 # CXX
 # FC
+
+cmake $buildpath/source/gromacs-$VERSION \
+        -DCMAKE_INSTALL_PREFIX=$buildpath/versions/gromacs-$VERSION/gnu\
+        -DGMX_BUILD_OWN_FFTW=ON -DGMX_PREFER_STATIC_LIBS=ON \
+        -DGMX_GPU=OFF -DCMAKE_C_COMPILER=$CC \
+        -DCMAKE_GXX_COMPILER=$CXX
+
+make install
+
 

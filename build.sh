@@ -9,13 +9,10 @@ cd $buildpath/source
 wget -O archives/gromacs-$VERSION.tar.gz ftp://ftp.gromacs.org/pub/gromacs/gromacs-$VERSION.tar.gz
 tar zxvf archives/gromacs-$VERSION.tar.gz
 
-# TODO
-# compilers based on docker image
-# CC
-# CXX
-# FC
+export CC=gcc
+export CXX=g++
 
-cmake $buildpath/source/gromacs-$VERSION \
+cmake28 $buildpath/source/gromacs-$VERSION \
         -DCMAKE_INSTALL_PREFIX=$buildpath/versions/gromacs-$VERSION/gnu\
         -DGMX_BUILD_OWN_FFTW=ON -DGMX_PREFER_STATIC_LIBS=ON \
         -DGMX_GPU=OFF -DCMAKE_C_COMPILER=$CC \
@@ -23,4 +20,4 @@ cmake $buildpath/source/gromacs-$VERSION \
 
 make install
 
-
+#TODO find the binaries and make them a conda package

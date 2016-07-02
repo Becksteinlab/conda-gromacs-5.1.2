@@ -18,6 +18,21 @@ cmake28 $buildpath/source/gromacs-$VERSION \
         -DGMX_GPU=OFF -DCMAKE_C_COMPILER=$CC \
         -DCMAKE_GXX_COMPILER=$CXX
 
-make install
+make install -j 4
 
 #TODO find the binaries and make them a conda package
+
+rm -rf $buildpath/versions/gromacs-$VERSION/gnu/{'include','lib64','share/man'}
+
+cd $buildpath/versions/gromacs-$VERSION/gnu/bin
+
+mv gmx gmx.bin
+
+echo '#!/bin/sh
+
+DIR=$(dirname "$0")
+export GMXDATA="$DIR/share/gromacs"
+export LD_LIBRARY_PATH="$DIR/../lib/compat-libc:$LD_LIBRARY_PATH"
+"$DIR/gmx.bin" "$@"' >> gmx
+
+chmod +x gmx

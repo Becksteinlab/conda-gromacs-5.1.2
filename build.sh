@@ -16,7 +16,8 @@ cmake28 $buildpath/source/gromacs-$VERSION \
         -DCMAKE_INSTALL_PREFIX=$buildpath/versions/gromacs-$VERSION/gnu\
         -DGMX_BUILD_OWN_FFTW=ON -DGMX_PREFER_STATIC_LIBS=ON \
         -DGMX_GPU=OFF -DCMAKE_C_COMPILER=$CC \
-        -DCMAKE_GXX_COMPILER=$CXX
+        -DCMAKE_GXX_COMPILER=$CXX \
+        -DGMX_BUILD_SHARED_EXE=OFF
 
 make install -j 4
 
@@ -36,3 +37,8 @@ export LD_LIBRARY_PATH="$DIR/../lib/compat-libc:$LD_LIBRARY_PATH"
 "$DIR/gmx.bin" "$@"' >> gmx
 
 chmod +x gmx
+
+cd $buildpath/versions
+
+tar cvfz gromacs-$VERSION.tar.bz gromacs-$VERSION
+cp gromacs-$VERSION.tar.bz /

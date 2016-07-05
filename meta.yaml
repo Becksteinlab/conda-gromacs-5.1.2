@@ -1,0 +1,12 @@
+package:
+  name: gromacs-5.1.2
+  version: 0.1.0
+
+build:
+  number: 1
+
+requirements:
+  run:
+    - python
+about:
+  summary: Gromacs 5.1.2 built for testing on TravisCI

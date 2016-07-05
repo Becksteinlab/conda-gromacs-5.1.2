@@ -12,7 +12,7 @@ tar zxvf archives/gromacs-$VERSION.tar.gz
 export CC=gcc
 export CXX=g++
 
-cmake28 $buildpath/source/gromacs-$VERSION \
+cmake $buildpath/source/gromacs-$VERSION \
         -DCMAKE_INSTALL_PREFIX=$buildpath/versions/gromacs-$VERSION/gnu\
         -DGMX_BUILD_OWN_FFTW=ON -DGMX_PREFER_STATIC_LIBS=ON \
         -DGMX_GPU=OFF -DCMAKE_C_COMPILER=$CC \
@@ -40,5 +40,5 @@ chmod +x gmx
 
 cd $buildpath/versions
 
-tar cvfz gromacs-$VERSION.tar.bz gromacs-$VERSION
-cp gromacs-$VERSION.tar.bz /
+tar cvfz gromacs-$VERSION.tar.bz2 gromacs-$VERSION
+cp gromacs-$VERSION.tar.bz2 /

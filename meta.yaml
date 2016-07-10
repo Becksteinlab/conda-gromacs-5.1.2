@@ -9,4 +9,5 @@ requirements:
   run:
     - python
 about:
-  summary: Gromacs 5.1.2 built for testing on TravisCI
+  summary: Testing version of Gromacs 5.1.2, a molecular dynamics software (http://gromacs.org). Contains binaries built for portability (serial, bundled FFT, no GPU). Only intended for testing; this build should not be used for serious work.
+  license: LGPL

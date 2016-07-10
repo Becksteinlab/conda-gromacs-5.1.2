@@ -10,5 +10,5 @@ requirements:
     - python
 
 about:
-  summary: Testing version of Gromacs 5.1.2, a molecular dynamics software (http://gromacs.org). Contains binaries built for portability (serial, bundled FFT, no GPU). Only intended for testing software that requires Gromacs and should not be used for any serious work.
+  summary: Testing version of Gromacs 5.1.2, a molecular dynamics software (http://gromacs.org). Contains binaries built for portability (serial, bundled FFT, no GPU). Only intended for testing; this build should not be used for serious work.
   license: LGPL

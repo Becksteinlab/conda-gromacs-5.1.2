@@ -5,8 +5,8 @@ RUN wget  --no-check-certificate https://repo.continuum.io/archive/Anaconda2-4.1
 RUN /bin/bash ~/anaconda.sh -b -p /opt/conda
 RUN rm ~/anaconda.sh
 
-COPY build.sh /root/build.sh
-COPY build_conda_package.sh /root/build_conda_package.sh
-COPY meta.yaml /root/meta.yaml
+COPY gromacs /root/gromacs
+COPY get_gmx /root/get_gmx
 
 CMD /bin/bash
+#ENTRYPOINT ["/bin/bash","/root/build.sh"]

@@ -22,3 +22,4 @@ try:
   print(versions[sys.argv[1]])
 except KeyError:
   print("Gromacs {0} path not found".format(sys.argv[1]))
+  exit(1)

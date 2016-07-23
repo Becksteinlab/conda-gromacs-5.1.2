@@ -13,13 +13,6 @@ INSTALL_SHARE=$INSTALL_DIR/share
 cp $OUT /root/
 cp -r /tmp/gromacs_build/versions/gromacs-5.1.2/gnu/* /root/gromacs
 
-sed -i "s|.*GMXRC.bash.*|. $INSTALL_BIN/GMXRC.bash|" bin/GMXRC
-sed -i "s|.*GMXRC.csh.*|. $INSTALL_BIN/GMXRC.csh|" bin/GMXRC
-
-sed -i "s|GMXPREFIX=.*|GMXPREFIX=$INSTALL_DIR|" bin/GMXRC.bash
-sed -i "s|setenv GMXPREFIX.*|setenv GMXPREFIX $INSTALL_DIR|" bin/GMXRC.csh
-sed -i "s|source.*|source $INSTALL_DIR/bin/GMXRC.bash|" bin/GMXRC.zsh
-
 cd ..
 rm gromacs/*.sh gromacs/meta.yaml
 cp /root/get_gmx gromacs/

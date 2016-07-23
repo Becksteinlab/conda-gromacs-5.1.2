@@ -9,4 +9,3 @@ COPY gromacs /root/gromacs
 COPY get_gmx /root/get_gmx
 
 CMD /bin/bash
-#ENTRYPOINT ["/bin/bash","/root/build.sh"]

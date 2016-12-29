@@ -1,0 +1,14 @@
+package:
+  name: gromacs-5.1.2
+  version: 0.1.0
+
+build:
+  number: 1
+
+requirements:
+  run:
+    - python
+
+about:
+  summary: Testing version of Gromacs 5.1.2, a molecular dynamics software (http://gromacs.org). Contains binaries built for portability (serial, bundled FFT, no GPU). Only intended for testing; this build should not be used for serious work.
+  license: LGPL
